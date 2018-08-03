@@ -10,16 +10,16 @@ import org.springframework.context.annotation.Configuration;
 /**
  * RabbitMQ 连接工厂
  */
-@Configuration("ConnCartConsumerConfiguration")
-public class ConnCartConsumerConfiguration {
+@Configuration("ConnOrderConsumerConfiguration")
+public class RaabitMqConnectionOrderConsumerConfiguration {
 
-    @Value("${spring.rabbitmq.cart.host}")
+    @Value("${spring.rabbitmq.order.host}")
     private String host;
-    @Value("${spring.rabbitmq.cart.port}")
+    @Value("${spring.rabbitmq.order.port}")
     private int port;
-    @Value("${spring.rabbitmq.cart.username}")
+    @Value("${spring.rabbitmq.order.username}")
     private String user;
-    @Value("${spring.rabbitmq.cart.password}")
+    @Value("${spring.rabbitmq.order.password}")
     private String password;
 
     @Autowired
@@ -30,7 +30,7 @@ public class ConnCartConsumerConfiguration {
      *
      * @return
      */
-    @Bean("cartConsumerConnectionFactory")
+    @Bean("orderConsumerConnectionFactory")
     public ConnectionFactory connectionFactory() {
         return rabbitMQConnection.createConnectionFactory(host, port, user, password, "/");
     }

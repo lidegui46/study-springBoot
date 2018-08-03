@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * </pre>
  */
 @Configuration("QueueBindingDeleteCartProducerConfiguration")
-public class QueueBindingDeleteCartProducerConfiguration {
+public class RabbitMQQueueBindingDeleteCartProducerConfiguration {
     @Autowired
     private RabbitMQTopicExchange rabbitMQTopicExchange;
 

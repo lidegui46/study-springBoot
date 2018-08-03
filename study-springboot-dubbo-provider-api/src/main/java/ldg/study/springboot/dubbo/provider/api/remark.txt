@@ -1,0 +1,29 @@
+/*****************************
+dubbo服务说明
+    dubbo服务暴露为api,不依赖于其它项目
+********************************/
+
+一、dubbo 提供者配置
+  1、配置 pom.xml
+    如：study-springmvc-dubbo-api/pom.xml
+
+  2、定义接口以及实现
+    如：
+        接口：ldg.study.springboot.dubbo.api.services.DubboService
+        实现：ldg.study.springboot.dubbo.provider.DubboServiceImpl
+
+  3、application.xml 导入dubbo.xml配置文件
+    如：study-springmvc/src/main/resources/applicationContext.xml
+
+  4、注册及暴露Dubbo服务文件
+    如：study-springmvc/src/main/resources/spring/dubbo.xml
+
+  5、环境配置注册Dubbo服务
+    如：profiles/dubbo.properties
+
+二、dubbo 消费者配置
+  1、注册及暴露Dubbo服务文件
+    如：study-springmvc/src/main/resources/spring/dubbo.xml
+
+  2、环境配置注册Dubbo服务
+    如：profiles/dubbo.properties

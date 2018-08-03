@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>控制器转到页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- 引用样式 和 js -->
+    <link rel="stylesheet" type="text/css" href="/css/controllerTohtml.css" />
+    <script type="text/javascript" src="/js/controllerTohtml.js"></script>
+</head>
+<body>
+这是控制器转到页面的实例
+<br />
+<pre>
+    调用后台传递参数时，必须使用：th，且包含在html标签中
+</pre>
+<span th:text="'Hello, ' + ${name} + '!'"  />
+</body>
+</html>
+
+

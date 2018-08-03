@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>study-springboot</artifactId>
+        <groupId>com.ldg</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>study-springboot-startup</artifactId>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Add typical dependencies for a controllerToView application -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-dependencies.version}</version>
+            <!--<exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>-->
+        </dependency>
+
+        <!-- 项目依赖 -->
+        <!--<dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-dubbo-provider-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-dubbo-provider</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>kryo</artifactId>
+                    <groupId>com.esotericsoftware.kryo</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-dubbo-consumer</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-cache-redis</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-event</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-plugin-factory</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-plugin-extension</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-messagequeue-kafka</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-orm-mybatis</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-orm-jdbcTemplate</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-web</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-job-scheduler</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-job-quartz</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-aop</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-mvc</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-messagequeue-activemq</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-thread</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-tools</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-web</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-messagequeue-rabbitmq-ack-producer</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ldg</groupId>
+            <artifactId>study-springboot-messagequeue-rabbitmq-ack-consumer</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        -->
+
+    </dependencies>
+
+    <!-- Package as an executable jar -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <resources>
+            <!-- 配置profiles -->
+            <resource>
+                <directory>${basedir}/../profiles/${filters.env}/</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+            <!-- base模块资源配置 -->
+            <!--<resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>-->
+            <!-- resource模块的资源配置 -->
+            <!--<resource>
+                <directory>${basedir}/../study-springboot-resource/src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>-->
+            <!-- Dubbo Provider Api 模块的资源配置 -->
+            <!--<resource>
+                <directory>${basedir}/../study-springboot-dubbo-provider-api/src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>-->
+            <!-- Dubbo Provider Support 模块的资源配置 -->
+            <!--<resource>
+                <directory>${basedir}/../study-springboot-dubbo-provider/src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>-->
+            <!-- Dubbo Consumer 模块的资源配置 -->
+            <!--<resource>
+                <directory>${basedir}/../study-springboot-dubbo-consumer/src/main/resources</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>-->
+        </resources>
+    </build>
+
+</project>

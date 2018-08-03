@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--
+    ******************************************************************************************************************
+    注：dubbo-extension.xml只能配置在主程序的资源配置中，放在dobbo-api项目时，项目间的依赖会导致生成多个application name，导致异常
+    ******************************************************************************************************************
+    -->
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="${dubbo.provider.application.name}" organization="${dubbo.provider.application.organization}"/>
+
+    <!-- 注册中心暴露服务地址 -->
+    <dubbo:registry protocol="${dubbo.provider.registry.protocol}" address="${dubbo.provider.registry.address}" />
+
+    <!-- dubbo协议暴露端口服务 -->
+    <dubbo:protocol name="${dubbo.provider.protocol.name}" port="${dubbo.provider.protocol.port}"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service protocol="dubbo" owner="foursix" version="1.0.0"
+                   interface="ldg.study.springboot.dubbo.provider.api.service.DubboProviderService"
+                   class="ldg.study.springboot.dubbo.provider.support.DefaultDubboProviderService"/>
+</beans>

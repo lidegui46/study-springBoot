@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ldg</groupId>
+    <artifactId>study-springboot</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>study-springboot-startup</module>
+        <module>study-springboot-cache-redis</module>
+        <module>study-springboot-dubbo-provider-api</module>
+        <module>study-springboot-dubbo-provider</module>
+        <module>study-springboot-dubbo-consumer</module>
+        <module>study-springboot-orm-mybatis</module>
+        <module>study-springboot-orm-jdbcTemplate</module>
+        <module>study-springboot-messagequeue-kafka</module>
+        <module>study-springboot-event</module>
+        <module>study-springboot-plugin-factory</module>
+        <module>study-springboot-plugin-extension</module>
+        <module>study-springboot-job-scheduler</module>
+        <module>study-springboot-web</module>
+        <module>study-springboot-tools</module>
+        <module>study-springboot-job-quartz-scheduler</module>
+        <module>study-springboot-annotation</module>
+        <module>study-springboot-aop</module>
+        <module>study-springboot-messagequeue-rocketmq</module>
+        <module>study-springboot-cache-memcache</module>
+        <module>study-springboot-designPattern-adapter</module>
+        <module>study-springboot-designPattern-registeCenter</module>
+        <module>study-springboot-thread</module>
+        <module>study-springboot-mvc</module>
+        <module>study-springboot-messagequeue-rabbitmq</module>
+        <module>study-springboot-messagequeue-rabbitmq-ack-producer</module>
+        <module>study-springboot-messagequeue-rabbitmq-ack-consumer</module>
+        <module>study-springboot-messagequeue-activemq</module>
+        <module>study-springboot-cache-redisson</module>
+        <module>study-springboot-messagequeue-rabbitmq-ack-factory</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <spring.version>4.3.8.RELEASE</spring.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <fastjson.version>1.2.35</fastjson.version>
+        <dubbo.version>2.8.4</dubbo.version>
+        <zk.client.version>0.1</zk.client.version>
+        <zookeeper.version>3.4.6</zookeeper.version>
+        <kryo.version>2.24.0</kryo.version>
+        <kryo.serializers.version>0.26</kryo.serializers.version>
+        <javassist.varsion>3.20.0-GA</javassist.varsion>
+        <redis.clients.version>1.3.2.RELEASE</redis.clients.version>
+        <spring-boot-dependencies.version>1.5.3.RELEASE</spring-boot-dependencies.version>
+        <spring-boot-mybatis.version>1.1.1</spring-boot-mybatis.version>
+        <mybatis.version>3.4.0</mybatis.version>
+        <mybatis-spring.version>1.3.0</mybatis-spring.version>
+        <spring-boot-druid.version>1.1.0</spring-boot-druid.version>
+        <mysql-connector.version>5.1.39</mysql-connector.version>
+        <guava.version>21.0</guava.version>
+        <javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
+        <quartz-scheduler.version>2.2.1</quartz-scheduler.version>
+        <quartz-scheduler-job.version>2.2.3</quartz-scheduler-job.version>
+        <spring-context-support.version>4.1.9.RELEASE</spring-context-support.version>
+        <druid.version>1.1.0</druid.version>
+    </properties>
+
+    <dependencies>
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!--Fast Json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <filters.env>dev</filters.env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <filters.env>test</filters.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>pre_prd</id>
+            <properties>
+                <filters.env>stage</filters.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>prd</id>
+            <properties>
+                <filters.env>prod</filters.env>
+            </properties>
+        </profile>
+    </profiles>
+
+    <!-- spring maven build 方式 -->
+    <!--<build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>-->
+
+    <!-- spring boot maven build 方式 -->
+    <build>
+        <!-- 构建插件  -->
+        <plugins>
+            <!-- spring boot maven构建工具 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- mybatis maven构建工具 -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

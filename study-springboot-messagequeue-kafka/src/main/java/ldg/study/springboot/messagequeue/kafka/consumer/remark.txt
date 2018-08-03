@@ -1,0 +1,15 @@
+
+
+
+                        订单进程(Topic,Execute)         Map<订单类型,订单接口>
+
+Map<TopicName,Topic进程>
+
+                        购物车进程(Topic,Execute)       Map<购物车类型,购物车接口>
+
+
+
+
+
+订单类型：下单、关闭、支付
+订单接口：下单实现、关闭实现

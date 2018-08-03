@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ldg.study.springboot.orm.mybatis.promotions.dao.CouponMapper">
+    <resultMap id="BaseResultMap" type="ldg.study.springboot.orm.mybatis.promotions.model.Coupons">
+        <result column="couponCode" property="couponCode" jdbcType="VARCHAR" />
+        <result column="buyerId" property="buyerId" jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        couponCode,buyerId
+    </sql>
+
+    <select id="find" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM coupons
+        limit 1;
+    </select>
+
+</mapper>

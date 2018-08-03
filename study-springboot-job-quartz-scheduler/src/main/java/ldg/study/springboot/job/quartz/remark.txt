@@ -1,0 +1,16 @@
+操作步骤：
+    1、启动后自动启动定时任务
+    2、调用方向定时任务调度注册定时任务；   http://localhost:8084//job/quartz/add
+    3、调度自动执行定时任务
+
+
+任务调度案例：
+    任务调度Quartz进阶开发——动态调度管理
+    https://www.toutiao.com/a6491076695129326094/?tt_from=mobile_qq&utm_campaign=client_share&app=news_article&utm_source=mobile_qq&iid=17386046042&utm_medium=toutiao_ios
+
+
+        详细：https://www.cnblogs.com/darkwind/p/5447324.html
+
+
+
+

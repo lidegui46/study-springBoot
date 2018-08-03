@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * </pre>
  */
 @Configuration("QueueBindingPayOrderProducerConfiguration")
-public class QueueBindingPayOrderProducerConfiguration {
+public class RabbitMQQueueBindingPayOrderProducerConfiguration {
     @Autowired
     private RabbitMQTopicExchange rabbitMQTopicExchange;
 

@@ -14,25 +14,25 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * 购物车 生产者 连接工厂
+ * 订单 生产者 连接工厂
  *
  * @author： ldg
  * @create date： 2018/7/24
  */
-@Configuration("ConnCartProducerConfiguration")
-public class ConnCartProducerConfiguration {
-    @Value("${spring.rabbitmq.cart.host}")
+@Configuration("ConnOrderProducerConfiguration")
+public class RabbitMQConnectionOrderProducerConfiguration {
+    @Value("${spring.rabbitmq.order.host}")
     private String host;
-    @Value("${spring.rabbitmq.cart.port}")
+    @Value("${spring.rabbitmq.order.port}")
     private int port;
-    @Value("${spring.rabbitmq.cart.username}")
+    @Value("${spring.rabbitmq.order.username}")
     private String user;
-    @Value("${spring.rabbitmq.cart.password}")
+    @Value("${spring.rabbitmq.order.password}")
     private String password;
 
-    @Value("${spring.rabbitmq.cart.publisher-confirms}")
+    @Value("${spring.rabbitmq.order.publisher-confirms}")
     private boolean publisherConfirms;
-    @Value("${spring.rabbitmq.cart.publisher-returns}")
+    @Value("${spring.rabbitmq.order.publisher-returns}")
     private boolean publisherReturns;
 
     @Autowired
@@ -41,9 +41,9 @@ public class ConnCartProducerConfiguration {
     @Autowired
     private RabbitMQAdmin rabbitMQAdmin;
 
-    //坑点注：cartConnectionFactory 只能通过@Autowired注入，否则在多ConnectionFactory环境下通过参数注入默认是第一个注入的连接
+    //坑点：cartConnectionFactory 只能通过@Autowired注入，否则在多ConnectionFactory环境下通过参数注入默认是第一个注入的连接
     @Autowired
-    @Qualifier("cartProducerConnectionFactory")
+    @Qualifier("orderProducerConnectionFactory")
     private ConnectionFactory connectionFactory;
 
     /**
@@ -52,8 +52,8 @@ public class ConnCartProducerConfiguration {
      *
      * @return
      */
-    //@Primary //坑点：一个环境有多个ConnectionFactory时，必须指定一个，@Primary放在此处时，只创建1个配置的Connection  @思考：不什么配置在此处时创建1个配置连接
-    @Bean("cartProducerConnectionFactory")
+    @Primary //坑点：一个环境有多个ConnectionFactory时，必须指定一个，@Primary放在此处时，会创建N个配置的Connection  @思考：不什么配置在此处时创建N个配置连接
+    @Bean("orderProducerConnectionFactory")
     public ConnectionFactory connectionFactory() {
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory(host, port);
         connectionFactory.setUsername(user);
@@ -67,9 +67,6 @@ public class ConnCartProducerConfiguration {
         // 设置 生产者 Returns（生产者发送消息时，是否return）
         connectionFactory.setPublisherReturns(publisherReturns);
 
-        // 最大允许空闲的最大channel数
-        connectionFactory.setChannelCacheSize(100);
-
         return connectionFactory;
     }
 
@@ -82,7 +79,7 @@ public class ConnCartProducerConfiguration {
      *
      * @return 已创建的RabbitMQ Template
      */
-    @Bean("cartProducerRabbitTemplate")
+    @Bean("orderProducerRabbitTemplate")
     public RabbitTemplate rabbitTemplate() {
         //坑点：cartConnectionFactory 只能通过@Autowired注入，否则在多ConnectionFactory环境下通过参数注入默认是第一个注入的连接
         return rabbitMQTemplate.createTemplate(connectionFactory);
@@ -90,16 +87,16 @@ public class ConnCartProducerConfiguration {
 
 
     /**
-     * 创建 Rabbit Admin
+     * 创建 RabbitMQ Admin
      * <pre>
      *      坑点：每个ConnectionFactory对应一个RabbtAdmin
      * </pre>
      *
      * @return 已创建的Rabbit Admin
      */
-    @Bean("cartProducerRabbitAdmin")
+    @Bean("orderProducerRabbitAdmin")
     public RabbitAdmin rabbitAdmin() {
-        //坑点注：cartConnectionFactory 只能通过@Autowired注入，否则在多ConnectionFactory环境下通过参数注入默认是第一个注入的连接
+        //坑点：cartConnectionFactory 只能通过@Autowired注入，否则在多ConnectionFactory环境下通过参数注入默认是第一个注入的连接
         return rabbitMQAdmin.createAdmin(connectionFactory);
     }
 }

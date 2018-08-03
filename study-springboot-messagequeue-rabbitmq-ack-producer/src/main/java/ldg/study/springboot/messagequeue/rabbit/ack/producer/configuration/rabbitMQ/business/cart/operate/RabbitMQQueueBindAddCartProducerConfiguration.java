@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * </pre>
  */
 @Configuration("QueueBindAddCartProducerConfiguration")
-public class QueueBindAddCartProducerConfiguration {
+public class RabbitMQQueueBindAddCartProducerConfiguration {
 
     @Autowired
     private RabbitMQTopicExchange rabbitMQTopicExchange;

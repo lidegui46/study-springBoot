@@ -37,7 +37,6 @@
         <module>study-springboot-messagequeue-rabbitmq-ack-consumer</module>
         <module>study-springboot-messagequeue-activemq</module>
         <module>study-springboot-cache-redisson</module>
-        <module>study-springboot-messagequeue-rabbitmq-ack-factory</module>
     </modules>
 
     <properties>

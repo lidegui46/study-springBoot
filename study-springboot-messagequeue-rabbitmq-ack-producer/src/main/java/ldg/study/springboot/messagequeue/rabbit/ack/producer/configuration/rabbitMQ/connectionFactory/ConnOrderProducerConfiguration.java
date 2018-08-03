@@ -19,8 +19,8 @@ import org.springframework.context.annotation.Primary;
  * @author： ldg
  * @create date： 2018/7/24
  */
-@Configuration("rabbitMQConnectionOrderProducerConfiguration")
-public class RabbitMQConnectionOrderProducerConfiguration {
+@Configuration("ConnOrderProducerConfiguration")
+public class ConnOrderProducerConfiguration {
     @Value("${spring.rabbitmq.order.host}")
     private String host;
     @Value("${spring.rabbitmq.order.port}")

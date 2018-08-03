@@ -17,8 +17,8 @@ import org.springframework.context.annotation.Configuration;
  *     如果交换器通过路由键绑定多个队列，由需要创建多个binding方法（注：参数queue和exchange和实例的Queue和Exchange的方法名称相同）
  * </pre>
  */
-@Configuration("rabbitMQQueueAndBindingPayOrderProducerConfiguration")
-public class RabbitMQQueueAndBindingPayOrderProducerConfiguration {
+@Configuration("QueueBindingPayOrderProducerConfiguration")
+public class QueueBindingPayOrderProducerConfiguration {
     @Autowired
     private RabbitMQTopicExchange rabbitMQTopicExchange;
 
@@ -29,7 +29,7 @@ public class RabbitMQQueueAndBindingPayOrderProducerConfiguration {
      * 创建 RabbitMQ Queue 【pay】
      *
      * @param orderProducerRabbitAdmin 已申明订单RabbitAdmin，此RabbitAdmin绑定了对应的ConnectionFactory
-     * @return 已绑定指定申明（connection）的队列
+     * @return 已绑定指定申明（connectionFactory）的队列
      */
     @Bean("payOrderProducerQueue")
     public Queue payOrderQueue(RabbitAdmin orderProducerRabbitAdmin) {
@@ -42,7 +42,7 @@ public class RabbitMQQueueAndBindingPayOrderProducerConfiguration {
      * @param orderProducerRabbitAdmin 已申明订单RabbitAdmin，此RabbitAdmin绑定了对应的ConnectionFactory
      * @param orderProducerExchange      已申请的交换机
      * @param payOrderProducerQueue      已申请的支付队列
-     * @return 已绑定指定申明（connection）的绑定
+     * @return 已绑定指定申明（connectionFactory）的绑定
      */
     @Bean("bindingPayOrder")
     public Binding bindingPayOrder(RabbitAdmin orderProducerRabbitAdmin, TopicExchange orderProducerExchange, Queue payOrderProducerQueue) {

@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
  *     如果交换器通过路由键绑定多个队列，由需要创建多个binding方法（注：参数queue和exchange和实例的Queue和Exchange的方法名称相同）
  * </pre>
  */
-@Configuration("rabbitMQExchangeCartProducerConfiguration")
-public class RabbitMQExchangeCartProducerConfiguration {
+@Configuration("ExchangeCartProducerConfiguration")
+public class ExchangeCartProducerConfiguration {
 
     @Autowired
     private RabbitMQTopicExchange rabbitMQTopicExchange;
@@ -24,7 +24,7 @@ public class RabbitMQExchangeCartProducerConfiguration {
      * 创建 RabbitMQ Exchange
      *
      * @param cartProducerRabbitAdmin 已申明购物车RabbitAdmin，此RabbitAdmin绑定了对应的ConnectionFactory
-     * @return 已绑定指定申明（connection）的交换机
+     * @return 已绑定指定申明（connectionFactory）的交换机
      */
     @Bean("cartProducerExchange")
     public TopicExchange cartExchange(RabbitAdmin cartProducerRabbitAdmin) {

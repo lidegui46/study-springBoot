@@ -1,4 +1,4 @@
-package ldg.study.springboot.messagequeue.rabbit.ack.consumer.configuration.connection;
+package ldg.study.springboot.messagequeue.rabbit.ack.consumer.configuration.connectionFactory;
 
 import ldg.study.springboot.messagequeue.rabbit.ack.consumer.configuration.common.connection.RabbitMQConnection;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -10,16 +10,16 @@ import org.springframework.context.annotation.Configuration;
 /**
  * RabbitMQ 连接工厂
  */
-@Configuration("rabbitMQConnectionOrderConsumerConfiguration")
-public class RabbitMQConnectionOrderConsumerConfiguration {
+@Configuration("ConnCartConsumerConfiguration")
+public class ConnCartConsumerConfiguration {
 
-    @Value("${spring.rabbitmq.order.host}")
+    @Value("${spring.rabbitmq.cart.host}")
     private String host;
-    @Value("${spring.rabbitmq.order.port}")
+    @Value("${spring.rabbitmq.cart.port}")
     private int port;
-    @Value("${spring.rabbitmq.order.username}")
+    @Value("${spring.rabbitmq.cart.username}")
     private String user;
-    @Value("${spring.rabbitmq.order.password}")
+    @Value("${spring.rabbitmq.cart.password}")
     private String password;
 
     @Autowired
@@ -30,7 +30,7 @@ public class RabbitMQConnectionOrderConsumerConfiguration {
      *
      * @return
      */
-    @Bean("orderConsumerConnectionFactory")
+    @Bean("cartConsumerConnectionFactory")
     public ConnectionFactory connectionFactory() {
         return rabbitMQConnection.createConnectionFactory(host, port, user, password, "/");
     }

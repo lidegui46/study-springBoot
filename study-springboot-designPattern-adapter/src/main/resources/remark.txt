@@ -1,2 +1,0 @@
-原理：
-    Map<key,value>  通过key来适配

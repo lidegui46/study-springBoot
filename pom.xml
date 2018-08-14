@@ -28,8 +28,6 @@
         <module>study-springboot-aop</module>
         <module>study-springboot-messagequeue-rocketmq</module>
         <module>study-springboot-cache-memcache</module>
-        <module>study-springboot-designPattern-adapter</module>
-        <module>study-springboot-designPattern-registeCenter</module>
         <module>study-springboot-thread</module>
         <module>study-springboot-mvc</module>
         <module>study-springboot-messagequeue-rabbitmq</module>
@@ -37,6 +35,7 @@
         <module>study-springboot-messagequeue-rabbitmq-ack-consumer</module>
         <module>study-springboot-messagequeue-activemq</module>
         <module>study-springboot-cache-redisson</module>
+        <module>study-springboot-designPattern</module>
     </modules>
 
     <properties>

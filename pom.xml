@@ -66,6 +66,7 @@
         <quartz-scheduler-job.version>2.2.3</quartz-scheduler-job.version>
         <spring-context-support.version>4.1.9.RELEASE</spring-context-support.version>
         <druid.version>1.1.0</druid.version>
+        <common-io.version>2.5</common-io.version>
     </properties>
 
     <dependencies>

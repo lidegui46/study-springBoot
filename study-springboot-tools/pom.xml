@@ -18,6 +18,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot-dependencies.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${common-io.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

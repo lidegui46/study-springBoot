@@ -1,6 +1,6 @@
 package ldg.study.springboot.tools.web.api;
 
-import ldg.study.springboot.tools.utils.FastJsonUtils;
+import ldg.study.springboot.tools.utils.json.FastJsonUtils;
 import ldg.study.springboot.tools.web.dto.TestRequestDto;
 import org.springframework.web.bind.annotation.*;
 

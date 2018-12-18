@@ -1,4 +1,4 @@
-package ldg.study.springboot.tools.utils;
+package ldg.study.springboot.tools.utils.key;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;

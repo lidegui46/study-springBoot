@@ -1,12 +1,8 @@
 package ldg.study.springboot.job.quartz.dynamic.factory;
 
 import ldg.study.springboot.job.quartz.dynamic.model.JobDto;
-import ldg.study.springboot.tools.utils.SpringBeanUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 /**
  * 任务调度抽象工厂

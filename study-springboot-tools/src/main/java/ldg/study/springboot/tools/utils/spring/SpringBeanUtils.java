@@ -1,4 +1,4 @@
-package ldg.study.springboot.tools.utils;
+package ldg.study.springboot.tools.utils.spring;
 
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.ContextLoader;

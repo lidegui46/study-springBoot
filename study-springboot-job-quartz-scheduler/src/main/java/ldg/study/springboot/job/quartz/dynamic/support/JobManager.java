@@ -4,7 +4,7 @@ import ldg.study.springboot.job.quartz.dynamic.factory.DefaultJobFactory;
 import ldg.study.springboot.job.quartz.dynamic.factory.DisallowConcurrentJobFactory;
 import ldg.study.springboot.job.quartz.dynamic.model.JobConstants;
 import ldg.study.springboot.job.quartz.dynamic.model.JobDto;
-import ldg.study.springboot.tools.utils.FastJsonUtils;
+import ldg.study.springboot.tools.utils.json.FastJsonUtils;
 import org.quartz.*;
 import org.quartz.impl.matchers.GroupMatcher;
 import org.slf4j.Logger;

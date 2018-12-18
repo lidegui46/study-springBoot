@@ -1,4 +1,4 @@
-package ldg.study.springboot.tools.utils;
+package ldg.study.springboot.tools.utils.key;
 
 import java.util.Date;
 import java.util.UUID;

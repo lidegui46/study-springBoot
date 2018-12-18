@@ -1,6 +1,6 @@
-package ldg.study.springboot.redisson.support;
+package ldg.study.springboot.redisson.distributeLockByAnno.support;
 
-import ldg.study.springboot.redisson.service.DistributedLocker;
+import ldg.study.springboot.redisson.distributeLockByAnno.service.DistributedLocker;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;

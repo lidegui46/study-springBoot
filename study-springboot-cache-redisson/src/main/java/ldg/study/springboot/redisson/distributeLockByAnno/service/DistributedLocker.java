@@ -1,4 +1,4 @@
-package ldg.study.springboot.redisson.service;
+package ldg.study.springboot.redisson.distributeLockByAnno.service;
 
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;

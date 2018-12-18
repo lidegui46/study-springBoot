@@ -1,8 +1,8 @@
-package ldg.study.springboot.redisson.aspect;
+package ldg.study.springboot.redisson.distributeLockByAnno.aspect;
 
-import ldg.study.springboot.redisson.anno.DistributedLock;
-import ldg.study.springboot.redisson.exception.UnableToAquireLockException;
-import ldg.study.springboot.redisson.support.RedissonDistributedLocker;
+import ldg.study.springboot.redisson.distributeLockByAnno.anno.DistributedLock;
+import ldg.study.springboot.redisson.distributeLockByAnno.exception.UnableToAquireLockException;
+import ldg.study.springboot.redisson.distributeLockByAnno.support.RedissonDistributedLocker;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
@@ -28,11 +28,11 @@ public class DistributedLockAspect {
     @Autowired
     private RedissonDistributedLocker redissonDistributedLocker;
 
-    @Pointcut("@annotation(com.zqkh.common.configuration.lock.DistributedLock)")
-    public void DistributedLockAspect() {
+    @Pointcut("@annotation(ldg.study.springboot.redisson.distributeLockByAnno.anno.DistributedLock)")
+    public void distributedLockAspect() {
     }
 
-    @Around(value = "DistributedLockAspect()")
+    @Around(value = "distributedLockAspect()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
         Class targetClass = pjp.getTarget().getClass();
         String methodName = pjp.getSignature().getName();
@@ -44,7 +44,7 @@ public class DistributedLockAspect {
 
 
 
-    @AfterThrowing(value = "DistributedLockAspect()", throwing = "ex")
+    @AfterThrowing(value = "distributedLockAspect()", throwing = "ex")
     public void afterThrowing(Throwable ex) {
         throw new RuntimeException(ex);
     }

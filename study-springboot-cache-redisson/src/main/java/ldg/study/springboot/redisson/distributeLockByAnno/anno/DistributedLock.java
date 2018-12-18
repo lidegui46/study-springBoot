@@ -1,4 +1,4 @@
-package ldg.study.springboot.redisson.anno;
+package ldg.study.springboot.redisson.distributeLockByAnno.anno;
 
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;

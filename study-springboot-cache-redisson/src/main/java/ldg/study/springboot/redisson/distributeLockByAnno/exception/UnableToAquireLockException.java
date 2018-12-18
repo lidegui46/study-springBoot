@@ -1,4 +1,4 @@
-package ldg.study.springboot.redisson.exception;
+package ldg.study.springboot.redisson.distributeLockByAnno.exception;
 
 
 public class UnableToAquireLockException extends RuntimeException {

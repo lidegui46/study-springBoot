@@ -1,6 +1,6 @@
-package ldg.study.springboot.designPattern.adapter.NoteBook;
+package ldg.study.springboot.designPattern.adapter.noteBook;
 
-import ldg.study.springboot.designPattern.adapter.TongDianPlugin.ThreePlugin;
+import ldg.study.springboot.designPattern.adapter.tongDianPlugin.ThreePlugin;
 
 /**
  * 苹果笔记本 ,需要三线插头

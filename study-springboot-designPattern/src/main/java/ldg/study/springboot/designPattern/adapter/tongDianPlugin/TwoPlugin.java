@@ -1,4 +1,4 @@
-package ldg.study.springboot.designPattern.adapter.TongDianPlugin;
+package ldg.study.springboot.designPattern.adapter.tongDianPlugin;
 
 /**
  * 二线插件适配器

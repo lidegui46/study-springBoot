@@ -1,4 +1,4 @@
-package ldg.study.springboot.designPattern.adapter.TongDianPlugin;
+package ldg.study.springboot.designPattern.adapter.tongDianPlugin;
 
 /**
  * @author： ldg

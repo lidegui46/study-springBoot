@@ -1,4 +1,4 @@
-package ldg.study.springboot.designPattern.adapter.NoteBook;
+package ldg.study.springboot.designPattern.adapter.noteBook;
 
 /**
  * 笔记本

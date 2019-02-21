@@ -1,6 +1,6 @@
-package ldg.study.springboot.designPattern.adapter.NoteBook;
+package ldg.study.springboot.designPattern.adapter.noteBook;
 
-import ldg.study.springboot.designPattern.adapter.TongDianPlugin.TwoPlugin;
+import ldg.study.springboot.designPattern.adapter.tongDianPlugin.TwoPlugin;
 
 /**
  * Dell笔记本

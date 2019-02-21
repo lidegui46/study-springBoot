@@ -1,10 +1,10 @@
-package ldg.study.springboot.designPattern.adapter.Adapter;
+package ldg.study.springboot.designPattern.adapter.adapter.objectAdapter;
 
-import ldg.study.springboot.designPattern.adapter.TongDianPlugin.ThreePlugin;
-import ldg.study.springboot.designPattern.adapter.TongDianPlugin.TongDianPlugin;
+import ldg.study.springboot.designPattern.adapter.tongDianPlugin.ThreePlugin;
+import ldg.study.springboot.designPattern.adapter.tongDianPlugin.TongDianPlugin;
 
 /**
- * “某种” 适配 三线插头
+ * 【对象适配器】“某种” 适配 三线插头
  *
  * @author： ldg
  * @create date： 2019/2/21

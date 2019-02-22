@@ -1,4 +1,4 @@
-package ldg.study.springboot.designPattern.factory.factory;
+package ldg.study.springboot.designPattern.factory.abstractFactory;
 
 /**
  * 汽车工厂

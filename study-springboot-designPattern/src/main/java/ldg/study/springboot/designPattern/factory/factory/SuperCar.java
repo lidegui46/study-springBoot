@@ -1,5 +1,7 @@
 package ldg.study.springboot.designPattern.factory.factory;
 
+import ldg.study.springboot.designPattern.factory.abstractFactory.Car;
+
 /**
  * 速派 汽车
  *

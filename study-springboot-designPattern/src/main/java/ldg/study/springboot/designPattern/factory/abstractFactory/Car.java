@@ -1,4 +1,4 @@
-package ldg.study.springboot.designPattern.factory.factory;
+package ldg.study.springboot.designPattern.factory.abstractFactory;
 
 import ldg.study.springboot.designPattern.factory.carAction.DriveCar;
 

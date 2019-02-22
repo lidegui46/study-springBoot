@@ -1,9 +1,8 @@
 package ldg.study.springboot.designPattern.factory;
 
-import ldg.study.springboot.designPattern.factory.factory.Car;
-import ldg.study.springboot.designPattern.factory.factory.Factory;
+import ldg.study.springboot.designPattern.factory.abstractFactory.Car;
+import ldg.study.springboot.designPattern.factory.abstractFactory.Factory;
 import ldg.study.springboot.designPattern.factory.factory.SuTenCarFactory;
-import ldg.study.springboot.designPattern.factory.factory.SuperCarFactory;
 
 /**
  * @author： ldg

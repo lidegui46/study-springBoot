@@ -40,6 +40,9 @@ public class ExecuteSupport implements ExecuteService {
 
         3、newCachedThreadPool
             定义：可变大小线程池，按照任务数来分配线程
+
+        4、newScheduledThreadPool
+            定义：
     */
 
     /**

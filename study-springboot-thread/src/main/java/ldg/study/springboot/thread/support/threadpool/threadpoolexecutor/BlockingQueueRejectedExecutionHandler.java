@@ -15,6 +15,10 @@ public class BlockingQueueRejectedExecutionHandler implements RejectedExecutionH
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
         // 任务被拒绝后，重新加入线程池
         try {
+            //重新提交任务
+            //executor.execute(r);
+
+            //任务添加到队列
             executor.getQueue().put(r);
         } catch (InterruptedException e) {
             System.out.println("rejected executor handler：reput queue error");

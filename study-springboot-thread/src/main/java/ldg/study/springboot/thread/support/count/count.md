@@ -6,6 +6,8 @@
     
     场景: 任务A需要等待其它4个任务执行完成后才能执行
     
+    描述： 计数器 >0 时阻塞，=0 时执行后面线程
+    
     例子：   
         CountDownLatch countDownLatch = new CountDownLatch(4);
         new Thread(){
@@ -36,6 +38,8 @@
          release(int permits)：释放permits个许可，注意：在释放许可之前，必须先获获得许可。
          
          availablePermits()：获取可用的许可数目
+    
+    描述： 计数器=0时阻塞，>0时执行后面线程
     
     例子： 
 

@@ -35,6 +35,7 @@
         <module>study-springboot-messagequeue-rabbitmq-ack-consumer</module>
         <module>study-springboot-messagequeue-activemq</module>
         <module>study-springboot-designPattern</module>
+        <module>study-springboot-queue</module>
     </modules>
 
     <properties>

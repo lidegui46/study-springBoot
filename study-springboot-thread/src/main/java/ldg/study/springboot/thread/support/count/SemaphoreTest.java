@@ -5,7 +5,8 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreTest {
     public static void main(String[] args) {
         //同时可执行的线程数据
-        Semaphore semaphore = new Semaphore(5);
+        //Semaphore semaphore = new Semaphore(5);
+        Semaphore semaphore = new Semaphore(5,true);
         //总任务数
         int workerNum = 8;
         for (int i = 0; i < workerNum; i++) {

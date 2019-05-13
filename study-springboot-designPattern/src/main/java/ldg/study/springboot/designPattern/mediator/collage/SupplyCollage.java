@@ -9,7 +9,7 @@ import ldg.study.springboot.designPattern.mediator.mediator.Mediator;
  * @create date： 2019/5/8
  */
 public class SupplyCollage extends Collage {
-    SupplyCollage(String name, Mediator mediator) {
+    public SupplyCollage(String name, Mediator mediator) {
         super(name, mediator);
     }
 

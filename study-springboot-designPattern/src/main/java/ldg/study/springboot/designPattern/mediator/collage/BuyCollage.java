@@ -9,7 +9,7 @@ import ldg.study.springboot.designPattern.mediator.mediator.Mediator;
  * @create date： 2019/5/8
  */
 public class BuyCollage extends Collage {
-    BuyCollage(String name, Mediator mediator) {
+    public BuyCollage(String name, Mediator mediator) {
         super(name, mediator);
     }
 

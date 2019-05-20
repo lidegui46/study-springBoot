@@ -1,10 +1,15 @@
 package ldg.study.springboot.tools.utils.http;
 
+import com.alibaba.fastjson.JSONObject;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * @author： ldg
@@ -45,5 +50,19 @@ public class HttpUtils {
             }
         }
         return result;
+    }
+
+    public static Map getRequestBodyToMap(HttpServletRequest request) {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
+            String str = "";
+            StringBuilder sbBody = new StringBuilder();
+            while ((str = reader.readLine()) != null) {
+                sbBody.append(str);
+            }
+            return JSONObject.parseObject(sbBody.toString());
+        } catch (Exception io) {
+            return Collections.EMPTY_MAP;
+        }
     }
 }

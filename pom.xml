@@ -16,6 +16,7 @@
         <module>study-springboot-dubbo-consumer</module>
         <module>study-springboot-orm-mybatis</module>
         <module>study-springboot-orm-jdbcTemplate</module>
+        <module>study-springboot-orm-jpa</module>
         <module>study-springboot-messagequeue-kafka</module>
         <module>study-springboot-event</module>
         <module>study-springboot-plugin-factory</module>

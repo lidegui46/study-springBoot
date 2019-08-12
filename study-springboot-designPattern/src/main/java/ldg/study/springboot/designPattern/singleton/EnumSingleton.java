@@ -13,9 +13,12 @@ import java.io.Serializable;
  * </pre>
  *
  * <pre>
- *     枚举的不允许反射，详见 Constructor.newInstance() 的源码
- *     if ((clazz.getModifiers() & Modifier.ENUM) != 0)
+ *     反射：枚举的不允许反射，详见 Constructor.newInstance() 的源码
+ *          if ((clazz.getModifiers() & Modifier.ENUM) != 0)
  *             throw new IllegalArgumentException("Cannot reflectively create enum objects");
+ *     序列化：
+ *          Enum 实现 “Serializable”，并重写“readObject” 和 "readObjectNoData",并直接抛出异常
+ *          结论： Enum不能被反序列化。只能通过valueOf来查找（查找原理：属性加入到values中[map<name,T>]，然后通过map.get(name)方法查找T）
  * </pre>
  *
  * @author： ldg

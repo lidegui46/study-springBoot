@@ -35,7 +35,7 @@ public class Jedis1Visitor {
      *
      * @return
      */
-    private Jedis getClient() {
+    public Jedis getClient() {
         try {
             return this.redisPool1.getResource();
         } catch (Exception e) {
